@@ -1,0 +1,20 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Data is never committed — bring your own panel
+*.db
+*.db-shm
+*.db-wal
+data/
+reports/
+runs/
+*.parquet
+*.feather
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
