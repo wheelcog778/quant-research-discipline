@@ -97,3 +97,7 @@ python docs/tools/mde.py --sigma 20 --n 100 --alpha 0.05 --power 0.8
 ## 许可
 
 MIT，见 [LICENSE](LICENSE)。
+
+## 联系
+
+作者：Q洗Y烟机 · 753073396@qq.com
