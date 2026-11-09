@@ -53,7 +53,7 @@ factor-verdict/
 │   ├── score-construct.md     # 第 0 关：构造效度的判读与写法
 │   ├── verification/          # 边界探针（成本方向/重叠校准/口径一致）
 │   ├── reconciling-copies.md  # 收到外来 zip / 另一台机的版本时怎么合并
-│   ├── case-shenlong.md      # 实战案例：一个策略被三遍否证的全过程
+│   ├── case-study.md      # 实战案例：一个策略被三遍否证的全过程
 │   ├── data-sources.md       # A股多源抓取、自建复权、大样本审计
 │   └── CHANGELOG.md          # v1.1–v1.8.0 每一条修了什么、对结论有什么影响
 ├── agents/
@@ -156,7 +156,7 @@ python scripts/vkit.py ic     --bars data/bars --factor data/factor.csv --cost 0
 - **清掉最后一处零方差假 t**：`factor_lab.rolling_ic` 原先保留了 `pstdev or 1e-9`，常数分段会算出 1.22 亿的假 t，现统一返回 `None`（不可估）。
 - **全包重叠 t 口径三处合一**：`spread_summary` 与 `pool_lab.py` 选股消融的 `alpha_t` 统一改调 `factor_lab.hac_t_overlap`（lag=H−1），消除 Bartlett 单核与朴素 t 的残留分叉。
 - **大样本 SQL 通道补齐入口闸门与参数化**：`db_lab.py` 与 `pool_lab.py` 在入口拦截非正整数/重复持有期、非正 top-N 与负成本，SQL `WHERE` 全部改为 `?` 参数化绑定并校验表/列标识符。
-- **文档与实战案例过检**：版本号统一为 `1.7.0`（过 `version_lint.py`），跨文件重复行清零（过 `doc_dup_scan.py`），`references/case-shenlong.md` 补齐七件套章节标题、复现命令与末节边界（过 `doctrine_check.py`）。自检扩至 **15 项**。
+- **文档与实战案例过检**：版本号统一为 `1.7.0`（过 `version_lint.py`），跨文件重复行清零（过 `doc_dup_scan.py`），`references/case-study.md` 补齐七件套章节标题、复现命令与末节边界（过 `doctrine_check.py`）。自检扩至 **15 项**。
 
 ## v1.6 改了什么（要点）
 

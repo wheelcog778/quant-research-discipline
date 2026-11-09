@@ -1,7 +1,7 @@
 # 七关判定标准（v1.3）
 
 > 每一条阈值都来自实测，不是教科书抄来的。标「实测」的数字可以在
-> `references/case-shenlong.md` 里找到出处。
+> `references/case-study.md` 里找到出处。
 
 ---
 

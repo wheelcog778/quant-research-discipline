@@ -22,7 +22,7 @@
 | 1 | `factor_lab.rolling_ic` 残留 `sd = pstdev(seg) or 1e-9` | 常数 IC 分段爆出 `t = +122474487.14` | 零方差分段返回 `None`，报告输出 `不可估`（自检 14） |
 | 2 | `spread_summary` 与 `pool_lab.py` 未接入 `hac_t_overlap` | `spread_summary` 调仅 Bartlett 的 `hac_t` 且 `db_lab` 漏传 `hac_lags`；`pool_lab` 用朴素 t 算重叠 cohort | 全包统一调 `factor_lab.hac_t_overlap(vals, H - 1)`，且 `db_lab` 成本表补齐持有期列（自检 14） |
 | 3 | `db_lab.py` / `pool_lab.py` 缺入口校验且 f-string 拼 SQL | 可传入 `-5` 持有期或非法表名，`cat` 含引号时拼进 SQL | 入口校验正整数持有期/top-N/非负成本，标识符白名单 + `WHERE` 参数化绑定（自检 15） |
-| 4 | 跨包检查器扫描不过（版本号双源、2 条重复行、`case-shenlong.md` 缺七件套标题） | `version_lint`、`doc_dup_scan`、`doctrine_check` 均报错 | 统一 `1.7.0`、消除跨文件重复行、`case-shenlong.md` 补齐口径/判级/可信度/重算命令/可引用事实并以「未覆盖的边界」收尾 |
+| 4 | 跨包检查器扫描不过（版本号双源、2 条重复行、`case-study.md` 缺七件套标题） | `version_lint`、`doc_dup_scan`、`doctrine_check` 均报错 | 统一 `1.7.0`、消除跨文件重复行、`case-study.md` 补齐口径/判级/可信度/重算命令/可引用事实并以「未覆盖的边界」收尾 |
 
 ## v1.6 — 2026-11-02 · 合并两条分叉 + 补回入口闸门
 

@@ -10,7 +10,7 @@ version: 1.8.1
 
 **v1.8.0（2026-11-03）**：补齐三大实战短板——①**A 股可交易性硬过滤**：`ic`/`yearly`/`sim` 自动拦截 T+1 入场日停牌（`volume==0`）与一字涨跌停（`high==low`），`sim` 止损遇一字跌停或停牌自动顺延至首个开板日按开盘价离场，消除「涨停买进、跌停按止损价逃顶」的回测假象；②**打通 CSV 与 SQLite 双通道**：`db_lab.py` 补齐独立 CLI `main()` 并修复 `walkforward(trials=...)` 门槛形参空转，`vkit.py` 新增 `db` 子命令统一调度；③**多重检验自动计次账本**：数据目录自动维护 `.verdict_trials.json` 记录不同参数组合尝试次数，手填 `--trials` 偏低时自动按累计次数抬高 Bonferroni 门槛并告警；自检扩至 **18 项**。
 
-**v1.7.0（2026-11-03）**：统一全包统计与工程门禁——①修掉 `factor_lab.rolling_ic` 残留的 `pstdev or 1e-9` 零方差假 t 兜底（常数分段改返 `None`/不可估）；②`spread_summary` 与 `pool_lab.py` 的 `alpha_t` 全部统一接入 `factor_lab.hac_t_overlap`（消除 Bartlett 单核与朴素 t 的三处口径分裂）；③`db_lab.py` 与 `pool_lab.py` 补齐正整数持有期/top-N/非负成本入口校验与 SQL 参数化防注入，`db_lab` 成本表补齐持有期列；④`references/case-shenlong.md` 章节标题与末节边界对齐七件套检查器（`doctrine_check.py` 实测可引用），全包通过 `version_lint.py` 与 `doc_dup_scan.py`（0 重复）；自检由 13 项扩至 **15 项**。
+**v1.7.0（2026-11-03）**：统一全包统计与工程门禁——①修掉 `factor_lab.rolling_ic` 残留的 `pstdev or 1e-9` 零方差假 t 兜底（常数分段改返 `None`/不可估）；②`spread_summary` 与 `pool_lab.py` 的 `alpha_t` 全部统一接入 `factor_lab.hac_t_overlap`（消除 Bartlett 单核与朴素 t 的三处口径分裂）；③`db_lab.py` 与 `pool_lab.py` 补齐正整数持有期/top-N/非负成本入口校验与 SQL 参数化防注入，`db_lab` 成本表补齐持有期列；④`references/case-study.md` 章节标题与末节边界对齐七件套检查器（`doctrine_check.py` 实测可引用），全包通过 `version_lint.py` 与 `doc_dup_scan.py`（0 重复）；自检由 13 项扩至 **15 项**。
 
 **v1.6（2026-11-02）**：把同一天里分叉的两版 v1.3 合成一个基线——统计口径用本仓的
 （`overlap_t` 把持期重叠的假阳性压到 5.0%；`ic` 与 `sim` 同为 T+1 收盘入场），
@@ -196,7 +196,7 @@ python scripts/vkit.py yearly --bars data/bars --factor data/factor.csv --horizo
 
 - `checklist.md` —— 门禁：判定"可提交"的唯一定义
 - `references/gates.md` —— 每关阈值、假阳/假阴、报告模板
-- `references/case-shenlong.md` —— 一次完整实战：一个策略被三遍否证
+- `references/case-study.md` —— 一次完整实战：一个策略被三遍否证
 - `references/data-sources.md` —— 多源抓取、自建复权、大样本审计工程形态
 - `references/score-construct.md` —— 第 0 关：复合打分器的三类污染、组内/组间口径、事件式写法
 - `references/pool-decomposition.md` —— 关 6.5：池子分解、过滤器成本、选股规则消融的判读法
