@@ -66,7 +66,7 @@
 ## 6. 重算命令
 
 ```bash
-cd C:\Users\the author\ql-news-gate
+cd <project>
 python gate/study.py fetch 300        # 抓取（幂等，约 20 分钟；已完成的票跳过）
 python gate/study.py stats            # → reports/verdict.json
 python gate/study.py cstats           # → reports/verdict_cluster.json

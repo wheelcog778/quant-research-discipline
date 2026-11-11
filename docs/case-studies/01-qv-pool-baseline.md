@@ -1,8 +1,8 @@
 # 结论 · Q/V 池历史基线（2025 十二个截面）· 2026-11-08
 
 > 预注册：`product\docs\预注册-QV池历史基线-2026-11-08.md` v0.7（已冻结并执行；v0.2–v0.7 均为实现对齐，记录在案）。
-> 产物：`研究\pool_v1\baseline\20261108T132634\`（by_date.json / detail.json / summary.json）。
-> 复核：Codex 独立复算（`交接\讨论\2026-11-08-基线复核-Codex.md`），复核完成前，本文数字只作内部判断，不对外引用。
+> 产物：`research\pool_v1\baseline\20261108T132634\`（by_date.json / detail.json / summary.json）。
+> 复核：Codex 独立复算（`<review-notes>\2026-11-08-基线复核-Codex.md`），复核完成前，本文数字只作内部判断，不对外引用。
 
 ## 一、结论
 

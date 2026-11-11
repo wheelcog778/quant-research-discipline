@@ -14,7 +14,7 @@
 | 窗口 | 2020-11-20 ~ 2026-10-29（1439 个交易日，与旧库一致） |
 | 成本 | 往返 0.2% |
 
-复算：`E:/python.exe tools/build_c1_dataset.py` → `tools/audit_long_history.py --build --mode strict --force --data-dir ~/product-data-c1` → `tools/compare_c1_stream.py`
+复算：`python tools/build_c1_dataset.py` → `tools/audit_long_history.py --build --mode strict --force --data-dir ~/product-data-c1` → `tools/compare_c1_stream.py`
 
 ## 二、数字表
 
@@ -64,10 +64,10 @@
 
 ```bash
 cd ~/product
-E:/python.exe tools/build_c1_dataset.py
-E:/python.exe tools/audit_long_history.py --build --mode strict --force --data-dir ~/product-data-c1
-E:/python.exe tools/compare_c1_stream.py
-E:/python.exe tools/bt_arms.py --db ~/product-data-c1/audit_product-data-c1_strict.db --out reports/c1_pool_20261105/backtest
+python tools/build_c1_dataset.py
+python tools/audit_long_history.py --build --mode strict --force --data-dir ~/product-data-c1
+python tools/compare_c1_stream.py
+python tools/bt_arms.py --db ~/product-data-c1/audit_product-data-c1_strict.db --out reports/c1_pool_20261105/backtest
 ```
 
 产物：`product-data-c1/`（3224 只）、`reports/c1_pool_20261105/`（ic_compare.md、summary.json、backtest/metrics.json）；脚本 `tools/build_c1_dataset.py`、`compare_c1_stream.py`、`probe_delisted.py`、`scan_sse_delisted.py`（均新增，未改产品本体）。

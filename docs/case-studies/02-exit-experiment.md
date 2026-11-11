@@ -55,7 +55,7 @@ E1 × 进攻期 × V54 的分布与逐年（n=243）：胜率 37.9%，均盈 +7.
 
 ```bash
 cd ~/product
-E:/python.exe tools/exit_lab.py --out reports/exit_lab_v54_20261105
+python tools/exit_lab.py --out reports/exit_lab_v54_20261105
 # 复用 reports/exit_lab_v54_20261105/entries.json，32 秒跑完；产出 summary.json / compare.md / per_trade.csv
 ```
 

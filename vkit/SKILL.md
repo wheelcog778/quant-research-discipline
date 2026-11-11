@@ -125,11 +125,11 @@ python scripts/vkit.py yearly --bars data/bars --factor data/factor.csv --horizo
 
 纯标准库。数据格式见 README.md；从审计库导出这些 CSV 用 `examples/export_from_db.py`。
 
-- **仓是源**：`C:\Users\the author\factor-verdict` 为主副本，技能目录里的是拷件。改完脚本必须
+- **仓是源**：`~/factor-verdict` 为主副本，技能目录里的是拷件。改完脚本必须
   `cp -r factor-verdict/{scripts,references,*.md} <技能目录>/`；两边不一致时以仓为准，先同步再引用结论。
   两侧可能各自改过不同文件，**先 `diff -r` 看清楚再合并**，不要假设仓一定是最新的；
   收到外来 zip 时的标准动作见 `references/reconciling-copies.md`（分叉≠新旧，按函数比、用对抗输入实测）。
-- **产物去处**：真实数据跑数存 `C:\Users\the author\factor-verdict-runs\YYYY-MM-DD-<范围>\`
+- **产物去处**：真实数据跑数存 `~/factor-verdict-runs/YYYY-MM-DD-<范围>/`
   （`data/` + `reports/` + `RUN.md`），总索引 `factor-verdict-runs\INDEX.md`；
   临时目录会被清，导出完就搬进去。数据源是点开头的隐藏目录，给用户一律用可见目录联接。
 - **大样本走 `db_lab`，别走 CSV**：`ic --factor` 会连 factor.csv 带 bars 一起读进内存，

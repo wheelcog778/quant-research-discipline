@@ -50,9 +50,9 @@ V4 容量检查：被选中票日成交额中位 **4,109 万**、5% 分位 **823
 
 ```bash
 cd ~/product
-E:/python.exe tools/amount_table.py
-E:/python.exe tools/filter_ablation.py
-E:/python.exe tools/capacity_check.py
+python tools/amount_table.py
+python tools/filter_ablation.py
+python tools/capacity_check.py
 ```
 
 ## 六、可引用的三句话

@@ -9,7 +9,7 @@
   不用收盘价比：除权日会假跌。分红缺失对高股息的价值池是负偏，属保守方向。
 
 用法：
-  E:/python.exe -B baseline.py --start 2025-01-01 --end 2025-12-31
+  python -B baseline.py --start 2025-01-01 --end 2025-12-31
 """
 from __future__ import annotations
 

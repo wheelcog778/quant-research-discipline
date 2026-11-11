@@ -18,3 +18,7 @@ runs/
 Thumbs.db
 .vscode/
 .idea/
+
+# `vkit.py selftest` writes synthetic fixtures to ./vkit_selftest by default;
+# running it from the repo root must not leave untracked output behind
+/vkit_selftest/

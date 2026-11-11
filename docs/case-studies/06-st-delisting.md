@@ -62,16 +62,16 @@ baostock 解决了「行情拿不到」（444 个事件不可用 → 全部可�
 
 ## 七、产物
 
-- `研究\st_event_runs\run-20261109\inclusion_bs.csv`（607 行）
-- `研究\st_event_runs\run-20261109\inclusion_bs_summary.json`
-- `研究\st_event_runs\run-20261109\sigma_report.json` / `.txt`
-- `研究\st_event_runs\_cache_baostock\`（625 只 × 1,474,830 条日线，可复算）
+- `research\st_event_runs\run-20261109\inclusion_bs.csv`（607 行）
+- `research\st_event_runs\run-20261109\inclusion_bs_summary.json`
+- `research\st_event_runs\run-20261109\sigma_report.json` / `.txt`
+- `research\st_event_runs\_cache_baostock\`（625 只 × 1,474,830 条日线，可复算）
 
 ## 八、复现
 
 ```bash
-cd ~/研究/st_event_runs
-E:/python.exe build_inclusion_baostock.py   # 纳入清单
-E:/python.exe estimate_sigma.py             # σ 与 MDE（20 日）
+cd research/st_event_runs
+python build_inclusion_baostock.py   # 纳入清单
+python estimate_sigma.py             # σ 与 MDE（20 日）
 # 多窗口见本文件 §二，脚本为内联版（窗口参数化待补）
 ```

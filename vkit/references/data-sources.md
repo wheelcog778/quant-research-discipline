@@ -93,7 +93,7 @@ A 股主板常规交易日涨跌幅通常为 ±10%，所以：
 
 ## 7. 配套的本地审计库（直接回灌 vkit）
 
-`~/.product/cache/history_2y/`（Windows：`C:\Users\the author\.product\cache\history_2y\`），约 **1.4GB**：
+`~/.product/cache/history_2y/`（Windows：`%USERPROFILE%\.product\cache\history_2y\`），约 **1.4GB**：
 
 | 文件 | 内容 |
 |---|---|
