@@ -66,8 +66,8 @@ Full text: [`vkit/references/gates.md`](vkit/references/gates.md).
 ## Eight case studies
 
 Each one is a real research line that ended in a kill decision, with the numbers
-that killed it (07 is the exception: it records an audit that stopped before
-producing numbers). Names are sanitised; the arithmetic is not.
+that killed it (07 is the exception: its audit stopped at the input gate, before
+any numbers were produced). Names are sanitised; the arithmetic is not.
 
 | # | Line | Verdict |
 |---|---|---|
@@ -77,7 +77,7 @@ producing numbers). Names are sanitised; the arithmetic is not.
 | 04 | Pool composition with delisted stocks | Adding 211 delisted names does not change the verdict: no usable alpha |
 | 05 | SUE | Killed: no market-cap data for 2010–2017, so no out-of-sample revival |
 | 06 | ST de-listing leg | Killed: MDE₈₀ 2.96pp against a 2.0pp threshold — noise, not absence of effect |
-| 07 | Sector clustering | Earlier level-1 kill stands; this record is the re-audit, which stopped at its input gate (date boundary) before producing new numbers. The earlier figures are not in this repository |
+| 07 | Sector clustering | Earlier level-1 kill stands; this record is the re-audit, which stopped at its input gate (date boundary) before producing new numbers |
 | 08 | Announcement gate | Rejected: the main test failed its pre-registered line; no gate was built |
 
 Index: [`docs/case-studies/README.md`](docs/case-studies/README.md).
@@ -110,4 +110,4 @@ MIT. See [LICENSE](LICENSE).
 
 ## Contact
 
-Author: Q洗Y烟机 · 753073396@qq.com
+Author: wheelcog778 · 753073396@qq.com

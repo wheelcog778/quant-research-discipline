@@ -1,4 +1,4 @@
-# T-002 审计进展与停止记录
+# 板块抱团的审计进展与停止记录
 
 记录时间：2026-11-07 13:17:13 +08:00。执行者：Codex (GPT-6)。
 
@@ -6,7 +6,7 @@
 
 ## 已落实的工作
 
-我先按全局交接规则读取限定资料并认领 T-002，随后冻结预注册，新增 `src/hac_audit.py` 和 `src/hac_audit_test.py`。脚本保留旧 A 算法复现用于精确对账，再实现统一的个股-日 A/B/C/D：特征先由当日数据生成，候选剔除涨停，按代码破平分档；HAC 主带宽固定为10，敏感性0/4/20，原1pp/2.9判据保留。
+我先按全局交接规则读取限定资料并认领该审计任务，随后冻结预注册，新增 `src/hac_audit.py` 和 `src/hac_audit_test.py`。脚本保留旧 A 算法复现用于精确对账，再实现统一的个股-日 A/B/C/D：特征先由当日数据生成，候选剔除涨停，按代码破平分档；HAC 主带宽固定为10，敏感性0/4/20，原1pp/2.9判据保留。
 
 静态审计确认旧 `src/test.py:37` 先过滤未来 ex5 缺失再计算特征，并未排除当日涨停样本；旧 `variants.py` 按行业数分档、日差提前舍入且没有处理循环尾部缓冲。新实现对这些问题已通过合成验证，**尚未在真实样本上验证其数值影响**。
 
@@ -24,7 +24,7 @@ protected_inputs_unchanged=10/10
 
 停止条件来自本轮预注册第16行和第65行；全局 AGENTS.md §5 要求口径决策写入待批。我没有截断数据、放宽边界或查看越界日的个股收益。`reviewed_guard/` 中没有 summary.json、daily_A.csv 或 legacy_reconciliation.json。原始缓存末日越界不等于已证明有效收益样本越界；本轮已冻结整个缓存的元信息边界，因此仍按约定停止。
 
-待确认文件：`<decision-queue>/T-002-HAC样本日期边界-2026-11-07.md`。建议确认以完整现有缓存为同样本审计对象，将实际末日登记为10-30；确认后另写补充预注册并保留本次记录，先对账旧A，再计算修正结果。原判据、固定带宽与不发版边界均不改变。
+待确认文件：`<decision-queue>/HAC-样本日期边界.md`。建议确认以完整现有缓存为同样本审计对象，将实际末日登记为10-30；确认后另写补充预注册并保留本次记录，先对账旧A，再计算修正结果。原判据、固定带宽与不发版边界均不改变。
 
 ## 真正执行的验证
 
@@ -52,7 +52,7 @@ protected_inputs_unchanged=10/10
 | `<project>/reports/hac_audit_20261107/reviewed_guard/input_integrity.json` | 39 | `94ec2f0d6ea8ab7e4e2e36283224d273459588e2e8465fe61c1ea82662bd5a58` |
 | `<project>/reports/hac_audit_20261107/synthetic_tests_reviewed.log` | 3506 | `1030df8409a9fc217a408030c23b917f46e618b67af753224e278e5a6a80a422` |
 | `<project>/reports/hac_audit_20261107/synthetic_e2e_reviewed_verification.json` | 285 | `34e612d56492fdfb9d925aff2100b391fd1cf279e970a2f5b4d0fde66820b176` |
-| `<decision-queue>/T-002-HAC样本日期边界-2026-11-07.md` | 3088 | `c31a1182f3cbdc1e62fc40876b016c9d6ca6247e5ea27e2450302c86cd1f2df8` |
+| `<decision-queue>/HAC-样本日期边界.md` | 3088 | `c31a1182f3cbdc1e62fc40876b016c9d6ca6247e5ea27e2450302c86cd1f2df8` |
 
 ## 边界与后续
 
@@ -64,6 +64,6 @@ protected_inputs_unchanged=10/10
 
 协作复核者已对R1/R2/R3独立复验并关闭：100组非二进制常量、多长度/带宽/缺失场景无伪t；5组恒定行业收益在corrected分支被跳过，legacy保留原行为；模拟受保护输入变化时退出2，STOP/status明确，summary与阈值结论均不发布。真实微小非零方差被保留，没有用近零容差改口径。
 
-实跑命令：`python -B -W error::ResourceWarning <workspace>/outputs/T-002-独立复验.py` → exit0，passed=true，closed=[R1,R2,R3]。独立报告：`<workspace>/outputs/T-002-独立复核.md`（8183 B，SHA256 7becaf9cad6bb324dd82e9ef99ef1ec911461105ea2c7f0dd75fe99c07c64c42）；复验脚本5676 B，SHA256 512d0ef0e93e6a6d4c0c347df1bd86c100e7a4eec1fbe7dabd39527e95584313。该复验只打开自己创建的人工空数据库。
+实跑命令：`python -B -W error::ResourceWarning <workspace>/outputs/独立复验.py` → exit0，passed=true，closed=[R1,R2,R3]。独立报告：`<workspace>/outputs/独立复核.md`（8183 B，SHA256 7becaf9cad6bb324dd82e9ef99ef1ec911461105ea2c7f0dd75fe99c07c64c42）；复验脚本5676 B，SHA256 512d0ef0e93e6a6d4c0c347df1bd86c100e7a4eec1fbe7dabd39527e95584313。该复验只打开自己创建的人工空数据库。
 
 主智能体也回读并核对7份reviewed_guard产物hash、10份受保护输入当前hash及项目报告/INDEX副本，全部一致。T-002以blocked交接，等待日期口径确认；实现验收完成不代表真实研究完成。
