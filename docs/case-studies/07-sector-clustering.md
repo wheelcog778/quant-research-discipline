@@ -38,7 +38,7 @@ protected_inputs_unchanged=10/10
 
 全部输出保留于 `<project>/reports/hac_audit_20261107/`。历轮检查分别留档；最终来源以 `reviewed_guard/run_manifest.json` 和本表为准。
 
-独立复核提出三项实现问题，我已据此修复：非二进制精确常量产生伪HAC t、修正路径漏过恒定行业收益、输入哈希检查前发布summary。处理采用精确全等检查（不设置近零容差），旧算法回放保留原行为；最终summary只在完整性通过后写出，停止状态另有status.json。独立复验记录见本工作区outputs/T-002-独立复核.md。
+独立复核提出三项实现问题，我已据此修复：非二进制精确常量产生伪HAC t、修正路径漏过恒定行业收益、输入哈希检查前发布summary。处理采用精确全等检查（不设置近零容差），旧算法回放保留原行为；最终summary只在完整性通过后写出，停止状态另有status.json。独立复验记录见本工作区outputs/独立复核.md。
 
 ## 产物清单
 
@@ -66,4 +66,4 @@ protected_inputs_unchanged=10/10
 
 实跑命令：`python -B -W error::ResourceWarning <workspace>/outputs/独立复验.py` → exit0，passed=true，closed=[R1,R2,R3]。独立报告：`<workspace>/outputs/独立复核.md`（8183 B，SHA256 7becaf9cad6bb324dd82e9ef99ef1ec911461105ea2c7f0dd75fe99c07c64c42）；复验脚本5676 B，SHA256 512d0ef0e93e6a6d4c0c347df1bd86c100e7a4eec1fbe7dabd39527e95584313。该复验只打开自己创建的人工空数据库。
 
-主智能体也回读并核对7份reviewed_guard产物hash、10份受保护输入当前hash及项目报告/INDEX副本，全部一致。T-002以blocked交接，等待日期口径确认；实现验收完成不代表真实研究完成。
+主智能体也回读并核对7份reviewed_guard产物hash、10份受保护输入当前hash及项目报告/INDEX副本，全部一致。该审计任务以 blocked 交接，等待日期口径确认；实现验收完成不代表真实研究完成。
