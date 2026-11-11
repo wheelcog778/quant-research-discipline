@@ -12,7 +12,7 @@ lines ended in a kill or a rejection. That is the normal outcome.
 | 04 | [04-c1-pool-composition.md](04-c1-pool-composition.md) | Pool composition with delisted names | Adding 211 delisted stocks leaves the verdict unchanged: no usable alpha |
 | 05 | [05-sue.md](05-sue.md) | SUE (standardised unexpected earnings) | Killed: no market-cap data for 2010–2017, so an out-of-sample revival is impossible |
 | 06 | [06-st-delisting.md](06-st-delisting.md) | ST de-listing leg | Killed by the pre-registered §7-4 rule: MDE₈₀ = 2.96pp > 2.0pp — the sample cannot detect an effect that small |
-| 07 | [07-sector-clustering.md](07-sector-clustering.md) | Sector clustering (limit-up breadth) | Killed at level 1: Q5−Q1 = −0.1137pp, t = −3.029 — statistically measurable, economically one ninth of the bar |
+| 07 | [07-sector-clustering.md](07-sector-clustering.md) | Sector clustering (limit-up breadth) | Earlier level-1 kill stands; this file is the re-audit, which stopped at its input gate (date boundary) before producing new numbers. The earlier figures are not in this repository |
 | 08 | [08-announcement-gate.md](08-announcement-gate.md) | Announcement hard-event gate | Rejected: the main test missed its pre-registered line, so no gate was built |
 
 ## How to read one
